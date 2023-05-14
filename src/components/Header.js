@@ -45,6 +45,8 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 36px;
+  overflow-x: hidden;
+
 `
 const Logo = styled.img`
   width: 80px;
@@ -97,4 +99,10 @@ const UserImg = styled.img`
   height: 40px;
   cursor: pointer;
   border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0px 0px 30px -7px #41bcff;
+  transition: all 0.1s ease-in-out;
+  &:hover{
+    box-shadow: 0px 0px 35px -5px #41bcff;
+  }
 `
