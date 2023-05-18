@@ -41,12 +41,17 @@ export default Header
 
 const Nav = styled.nav`
   height: 70px;
-  background: #090b13;
+  background: transparent;
+  backdrop-filter: blur(50px);
   display: flex;
   align-items: center;
   padding: 0 36px;
   overflow-x: hidden;
-
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
 `
 const Logo = styled.img`
   width: 80px;
