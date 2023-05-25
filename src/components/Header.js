@@ -1,38 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Auth } from './auth'
 
 function Header() {
   return (
     <Nav>
-        <Logo src="/images/logo.svg"/>
+      <Logo src="/images/logo.svg"/>
         
-        <NavMenu>
-          <a href="">
-            <img src="/images/home-icon.svg" alt="" className='menuIcon'/>
-            <span>HOME</span>
-          </a>
-          <a href="">
-            <img src="/images/search-icon.svg" alt="" className='menuIcon'/>
-            <span>SEARCH</span>
-          </a>
-          <a href="">
-            <img src="/images/watchlist-icon.svg" alt="" className='menuIcon'/>
-            <span>WATCHLIST</span>
-          </a>
-          <a href="">
-            <img src="/images/original-icon.svg" alt="" className='menuIcon'/>
-            <span>ORIGINALS</span>
-          </a>
-          <a href="">
-            <img src="/images/movie-icon.svg" alt="" className='menuIcon'/>
-            <span>MOVIES</span>
-          </a>
-          <a href="">
-            <img src="/images/series-icon.svg" alt="" className='menuIcon'/>
-            <span>SERIES</span>
-          </a>
-        </NavMenu>
-        <UserImg src="https://www.mecgale.com/wp-content/uploads/2017/08/dummy-profile.png"/>
+      <NavMenu>
+        <a href="">
+          <img src="/images/home-icon.svg" alt="" className='menuIcon'/>
+          <span>HOME</span>
+        </a>
+        <a href="">
+          <img src="/images/search-icon.svg" alt="" className='menuIcon'/>
+          <span>SEARCH</span>
+        </a>
+        <a href="">
+          <img src="/images/watchlist-icon.svg" alt="" className='menuIcon'/>
+          <span>WATCHLIST</span>
+        </a>
+        <a href="">
+          <img src="/images/original-icon.svg" alt="" className='menuIcon'/>
+          <span>ORIGINALS</span>
+        </a>
+        <a href="">
+          <img src="/images/movie-icon.svg" alt="" className='menuIcon'/>
+          <span>MOVIES</span>
+        </a>
+        <a href="">
+          <img src="/images/series-icon.svg" alt="" className='menuIcon'/>
+          <span>SERIES</span>
+        </a>
+      </NavMenu>
+      {/* <UserImg src="https://www.mecgale.com/wp-content/uploads/2017/08/dummy-profile.png"/> */}
+      <Auth/>
     </Nav>
   )
 }
@@ -46,7 +48,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 36px;
-  overflow-x: hidden;
+  overflow: hidden;
   position: fixed;
   z-index: 2;
   top: 0;

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import requests from '../Requests'
+import axios from 'axios'
 
 function ImgSlider() {
     
@@ -15,16 +17,27 @@ function ImgSlider() {
         autoplay: true,
         arrows: false
     };
+    const [movies, setMovies] = useState([])
+    const movie = movies[Math.floor(Math.random()*movies.length)]
+    useEffect(()=>{
+        axios.get(requests.requestTopRated).then((response)=>{
+        setMovies(response.data.results)
+        })
+    }, [])
+    
     return (
         <Carousel {...settings}>
             <Wrap>
-                <img src="/images/slider-badag.jpg" alt="" />
+                <img src={`https://image.tmdb.org/t/p/original/${movies[10]?.backdrop_path}`} alt={movies?.title}
+                style={{objectPosition: "top" + "20%"}}/>
             </Wrap>
             <Wrap>
-                <img src="/images/slider-scale.jpg" alt="" />
+                <img src={`https://image.tmdb.org/t/p/original/${movies[8]?.backdrop_path}`} alt={movies?.title}
+                style={{objectPosition: "top" + "20%"}} />
             </Wrap>
             <Wrap>
-                <img src="/images/slider-badging.jpg" alt="" />
+                <img src={`https://image.tmdb.org/t/p/original/${movies[9]?.backdrop_path}`} alt={movies?.title} 
+                style={{objectPosition: "top" + "10%"}}/>
             </Wrap>
         </Carousel>
     )
@@ -62,12 +75,14 @@ const Wrap = styled.div`
         border: 4px solid transparent;
         border-radius: 10px;
         width: 100%;
-        height: 100%;
+        object-fit: cover;
+        max-height: 52vh;
         box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
         rgb(0 0 0 / 73%) 0px 16px 10px -10px;
-        transition: all 120ms ease-in;
+        transition: all 200ms ease-in;
         &:hover{
             border: 4px solid rgba(249, 249, 249, 0.8 );
         }
     }
+
 `

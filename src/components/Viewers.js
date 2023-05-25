@@ -31,11 +31,11 @@ const Container = styled.main`
     display: grid;
     grid-gap: 25px;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    padding: 30px 45px 26px 45px;
+    padding: 30px 0px 26px 0px;
     @media (max-width: 600px) {
         grid-gap: 20px;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        padding: 15px 25px;
+        padding: 15px 0px;
     }  
 `
 const Wrap = styled.main`
@@ -53,7 +53,7 @@ const Wrap = styled.main`
         height: 100%;
         object-fit: cover;
     }
-    transition: all 220ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     &:hover{
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
                     rgb(0 0 0 / 72%) 0px 30px 22px -10px;

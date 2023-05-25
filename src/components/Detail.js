@@ -13,12 +13,12 @@ function Detail() {
         </ImgTitle>
         <Controls>
             <PlayButton>
-                <img src="/images/play-icon-black.png" alt="play button icon" />
+                <img src="/images/play-black.png" alt="play button icon" />
                 <span>PLAY</span>
             </PlayButton>
 
             <TrailerButton>
-                <img src="/images/play-icon-white.png" alt="play button icon" />
+                <img src="/images/play-white.png" alt="play button icon" />
                 <span>TRAILER</span>
             </TrailerButton>
 
@@ -67,13 +67,23 @@ const ImgTitle = styled.div`
     width: 35vw;
     min-height: 170px;
     min-width: 200px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     img{
-        width: 70%;
-        height: 70%;
+        width: 55%;
+        height: 55%;
         object-fit: contain;
-        margin-top: 10%;
+        margin-top: 12%;
         margin-left: -20px;
+        @media (max-width: 600px) {
+            margin-top: 10%;
+            margin-left: -20px;
+        }
+    }
+    @media (max-width: 600px) {
+        height: 50px;
+        width: 50px;
+        margin-left: 20px;
+        margin-bottom: 10px;    
     }
 `
 const Controls = styled.div`
@@ -81,13 +91,16 @@ const Controls = styled.div`
     align-items: center;
     flex-wrap: wrap;
     max-width: 350px;
+    @media (max-width: 600px) {
+        margin-top: -50px;
+    }
 `
 const PlayButton = styled.button`
     display: flex;
     align-items: center;
     border-radius: 5px;
     border: none;
-    font-size: 15px;
+    font-size: 14px;
     height: 56px;
     background-color: white;
     padding: 0 24px;
@@ -98,7 +111,11 @@ const PlayButton = styled.button`
     &:hover{
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
-        transform: scale(1.05);
+        transform: scale(1.03);
+    }
+    img{
+        width: 25px;
+        margin-right: 5px;
     }
     transition: all 50ms ease-in;
 `
@@ -119,8 +136,8 @@ const AddButton = styled.button`
     padding: 0;
     color: white;
     border-radius: 50%;
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     text-align: center;
     background-color: transparent;
     backdrop-filter: blur(10px);
@@ -128,7 +145,7 @@ const AddButton = styled.button`
     &:hover{
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
     transition: all 50ms ease-in;
 
@@ -144,13 +161,17 @@ const GroupWatchButton = styled(AddButton)`
 `
 const Subtitle = styled.div`
     color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
+    font-size: 14px;
     min-height: 20px;
-    margin-top: 26px;
+    margin-top: 30px;
 `
 const Description = styled.div`
     line-height: 1.4;
-    font-size: 20px;
+    font-size: 18px;
     width: 50%;
-    margin-top: 16px;
+    margin-top: 5px;
+    @media (max-width: 600px) {
+        width: 100%;
+        font-size: 16px;
+    }
 `
