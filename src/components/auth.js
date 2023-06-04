@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { auth, googleProvider } from "../config/firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 
@@ -20,7 +19,7 @@ export const Auth = () => {
     return (
         <div className="auth">
             <button className="sign signIn" onClick={signInWithGoogle}>Sign In</button>
-            <button className="sign signOut" onClick={logOut}>Log Out</button>
+            <button className="sign signOut" onClick={logOut}>Sign Out</button>
         </div>
     )
 }

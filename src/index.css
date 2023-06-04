@@ -1,3 +1,10 @@
+:root{
+  --primary-bg: #242526;
+  --secondary-bg: #fff;
+  --secondary-text-color: #cecece;
+  --border-radius: 8px;
+  --speed: 350ms;
+}
 *{
   margin: 0;
   padding: 0;
@@ -41,6 +48,7 @@ h4{
   font-weight: 700;
   background-color: transparent;
   transition: all 0.1s ease-in;
+  cursor: pointer;
 }
 .signOut{
   background-color: rgb(28, 231, 131);
@@ -52,4 +60,98 @@ h4{
 }
 .signIn:hover{
   color: rgba(255, 255, 255, 0.742);
+}
+ul{
+  list-style: none;
+}
+
+.menu-trigger .img{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0px 0px 30px -7px #41bcff;
+  transition: all 0.1s ease-in-out;
+  &:hover{
+    box-shadow: 0px 0px 35px -5px #41bcff;
+  }
+}
+.dropdown-menu{
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  width: 200px;
+  color: black;
+}
+.dropdown-menu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease-in-out;
+}
+.dropdown-menu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease-in-out;
+}
+.dropdown-menu::before{
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background-color: var(--secondary-bg);
+  transform: rotate(45deg);
+}
+.dropdownItem a{
+  color: black;
+}
+h3{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: #040714;
+  line-height: 1.2rem;
+}
+h3 span{
+  font-size: 14px;
+  color: #0407147d;
+  font-weight: 400;
+}
+.dropdown-menu ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu ul li a{
+  color: #040714ca;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.dropdown-menu ul li:hover a{
+  color: #101f608e;
+  cursor: pointer;
+}
+.logOut{
+  margin-bottom: 10px;
+  background-color: rgb(232, 41, 60);
+  color: white;
+  padding: 7px 10px;
+  border-radius: 3px;
+  transition: all 0.1s ease-in-out;
+}
+.logOut:hover{
+  background-color: rgb(175, 16, 32);
+  cursor: pointer;
 }

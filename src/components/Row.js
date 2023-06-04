@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import requests from '../Requests'
 import axios from 'axios'
 import {FaHeart, FaRegHeart} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 function Row({title, fetchURL}) {
   const [movies, setMovies] = useState([])
   const [like, setLike] = useState(false)
   // limit the number of movies to 8
   const limitedMovies = movies.slice(0, 8);
+  // console.log(limitedMovies)
 
   useEffect(()=>{
     axios.get(fetchURL).then((response)=>{
@@ -34,12 +35,9 @@ function Row({title, fetchURL}) {
                   <p>{item?.release_date}</p>
                   <h1>{truncateString(item?.title, 15)}</h1>
                 </div>
-                <Like>
-                  <p>
-                    {like? <FaHeart/> : <FaRegHeart/>}
-                  </p>
-                </Like>
-                <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} />
+                <Link to={`/detail/${item.id}`}>
+                  <img src={`https://image.tmdb.org/t/p/original/${item?.backdrop_path}`} alt={item?.title} />
+                </Link>
               </Wrap>
             );
           })}
@@ -122,18 +120,7 @@ const Wrap = styled.div`
                 rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   }
 `
-const Like = styled.div`
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  opacity: 0.7;
-  p{
-    font-size: 17px;
-  }
-  &:hover{
-    opacity: 1;
-  }
-`
+
 
 
 
